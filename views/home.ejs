@@ -1,6 +1,28 @@
+<%- include("./partials/header") %>
 
-<%- include("header") - %>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Home</h1>
+            <p><%= startingContent %></p>
 
+            <!-- <% for( let i = 0; i < posts.length ; i++ ) { %>
+                <div class="my-1">
+                    <h1><%= posts[i].title %></h1>
+                    <p class="text-truncate"><%= posts[i].content %></p>
+                </div>
+            <% } %> -->
 
+            <% posts.forEach(post => { %>
+                <div class="mt-2">
+                    <h1><%= post.title %></h1>
+                    <p class="text-truncate-2"><%= post.content %></p>  
+                    <a href="/posts/<%= post.title %>" class="link-primary">Read more</a>
+                </div>
+            <% }) %>
 
-<%- include("footer") - %>
+        </div>
+    </div>
+</div>
+
+<%- include("./partials/footer") %>
